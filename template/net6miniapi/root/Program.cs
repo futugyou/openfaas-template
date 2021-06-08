@@ -15,12 +15,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-//app.MapGet("/", (Func<string, FunctionHandler, string>)(([FromQuery] input, [FromServices] handler) => handler.Handle(input)));
-
-//await app.RunAsync();
-
-app.Urls.Add("http://*:8080");
-app.MapGet("/", (Func<string, FunctionHandler, string>)(HandleRequest));
+app.Map("{*url}", (Func<string, FunctionHandler, string>)(HandleRequest));
 
 await app.RunAsync();
 
