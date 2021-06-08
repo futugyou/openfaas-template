@@ -19,7 +19,7 @@ if (app.Environment.IsDevelopment())
 
 //await app.RunAsync();
 
-
+app.Urls.Add("http://*:8080");
 app.MapGet("/", (Func<string, FunctionHandler, string>)(HandleRequest));
 
 await app.RunAsync();
