@@ -15,6 +15,16 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-app.MapGet("/", (Func<string, FunctionHandler, string>)(([FromQuery] input, [FromServices] handler) => handler.Handle(input)));
+//app.MapGet("/", (Func<string, FunctionHandler, string>)(([FromQuery] input, [FromServices] handler) => handler.Handle(input)));
+
+//await app.RunAsync();
+
+
+app.MapGet("/", (Func<string, FunctionHandler, string>)(HandleRequest));
 
 await app.RunAsync();
+
+string HandleRequest([FromQuery] string input, [FromServices] FunctionHandler handler)
+{
+    return handler.Handle(input);
+}
