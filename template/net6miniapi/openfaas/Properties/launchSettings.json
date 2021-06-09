@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "root": {
+    "openfaas": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
