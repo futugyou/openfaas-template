@@ -1,5 +1,5 @@
 language: csharp
-fprocess: dotnet ./root.dll
+fprocess: dotnet ./Openfaas.dll
 welcome_message: |
   You have created a C# function using the Classic OpenFaaS Template.
 
